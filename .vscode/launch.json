@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug Medusa CLI",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/medusa",
+            "runtimeArgs": [
+                "develop"
+            ],
+            "console": "integratedTerminal",
+    //   "outFiles": [
+    //     "${workspaceFolder}/node_modules/**/*.js"
+    //   ]
+
+        }
+    ]
+}

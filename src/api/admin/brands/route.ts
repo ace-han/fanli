@@ -28,3 +28,5 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
 
   res.json({ brands, count, limit: take, offset: skip });
 };
+
+export const AUTHENTICATE = false;

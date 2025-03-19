@@ -1,4 +1,5 @@
 import {
+  authenticate,
   defineMiddlewares,
   validateAndTransformBody,
   validateAndTransformQuery,
@@ -27,8 +28,12 @@ export default defineMiddlewares({
       matcher: "/admin/brands",
       method: "GET",
       middlewares: [
+        authenticate("user", ["session", "bearer"], {
+          // allowUnauthenticated: true,
+          // allowUnregistered: true,
+        }),
         validateAndTransformQuery(GetBrandsSchema, {
-          defaults: ["id", "name", "products.*"],
+          defaults: ["id", "name", "created_at", "products.*"],
           isList: true,
         }),
       ],

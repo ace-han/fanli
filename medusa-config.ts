@@ -13,6 +13,10 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
+    workerMode: (process.env.WORKER_MODE as "worker" | "server") || "shared",
+  },
+  admin: {
+    disable: process.env.ADMIN_DISABLED === "true" || false,
   },
   modules: [
     {
